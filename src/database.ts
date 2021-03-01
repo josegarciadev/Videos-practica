@@ -10,8 +10,8 @@ import config from './config'
             useNewUrlParser:true
         }
         const db = await mongoose.connect(`mongodb://${config.MONGO_HOST}/${config.MONGO_DATABASE}`,mongooseOptions);
-        console.log('\x1b[31m%s\x1b[0m','Database ON: ', db.connect.name);
+        console.log('\x1b[31m%s\x1b[0m','Database ON: ', db.connection.name);
     }catch(error){
-
+        console.error(error);
     }
 })()
