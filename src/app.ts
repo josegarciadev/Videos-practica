@@ -6,7 +6,7 @@ import cors from 'cors'
 import videoRoutes from './routes/videoRoutes'
 const app= express();
 
-app.set('port',4000);
+app.set('port',process.env.PORT || 4000);
 app.use(morgan('dev'));
 app.use(cors());
 app.use(express.json());
